@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'OMORI_GAME2';
+    font-weight: bolder;
+    src: url('fonts/OMORI_GAME2.ttf') format('truetype');
+}
+
+
+body {
+    background-image: url(https://cdn.stardock.us/forums/0/0/1/9bc656ae-04dd-4610-9659-9429d848e05b.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    backdrop-filter: blur(15px);
+    font-family: 'OMORI_GAME2';
+    font-weight: bolder;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 25px;
+  }
+h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: solid 1px red;
+    padding-bottom: 20px;
+} 
+.postform {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    max-width: fit-content;
+    max-height: fit-content;
+    width: fit-content;
+}
