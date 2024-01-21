@@ -41,18 +41,28 @@
     <!-- Posts Display Area -->
     <div id="postsDisplayArea"></div>
     <?php
-// Fetch posts from the database
-$posts = fetchPostsFromDatabase(); // Replace this with your actual function to fetch posts
+        // Fetch posts from the database
+        $db = new SQLite3("posts.db");
+        $query = '
+        CREATE TABLE IF NOT EXISTS posts (
+            id INTEGER PRIMARY KEY,
+            author TEXT NOT NULL,
+            title TEXT NOT NULL,
+            content TEXT NOT NULL,
+            comments TEXT NOT NULL,
+            time_created DATETIME DEFAULT CURRENT_TIMESTAMP
+        )';
+        $db->exec($query);
 
-// Loop through each post
-foreach ($posts as $post) {
-    // Display the post
-    echo '<div class="post">';
-    echo '<h2>' . htmlspecialchars($post['title']) . '</h2>';
-    echo '<p>By ' . htmlspecialchars($post['author']) . '</p>';
-    echo '<p>' . nl2br(htmlspecialchars($post['content'])) . '</p>';
-    echo '</div>';
-}
-?>
+        $q = $db->query("SELECT * FROM posts ORDER BY id DESC");    
+        while ($post = $q->fetchArray(SQLITE3_ASSOC)) {
+            // Display the post
+            echo '<div class="post">';
+            echo '<h2>' . $post['title'] . '</h2>';
+            echo '<p>By ' . $post['author'] . '</p>';
+            echo '<p>' . $post['content'] . '</p>';
+            echo '</div>';
+        }
+    ?>
 </body>
-    </html>
+</html>

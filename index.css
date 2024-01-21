@@ -29,10 +29,9 @@ h3 {
     color: white;
     text-align: center;
     margin-bottom: 50px;
-    border-bottom: solid 1px red;
     padding-bottom: 20px;
 } 
-.postform {
+.post {
     display: inline-block;
     margin-left: 10px;
     padding: 10px;
@@ -40,6 +39,7 @@ h3 {
     color: black;
     background-color: whitesmoke;
     border-radius: 10px;
+    margin-top: 30px;
     max-width: fit-content;
     max-height: fit-content;
     width: fit-content;

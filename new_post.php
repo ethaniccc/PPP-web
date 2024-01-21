@@ -1,10 +1,10 @@
 <?php
 session_start();
-$db = new SQLite3('my_database.db');
+$db = new SQLite3('posts.db');
 
 $query = '
 CREATE TABLE IF NOT EXISTS posts (
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     author TEXT NOT NULL,
     title TEXT NOT NULL,
     content TEXT NOT NULL,
